@@ -19,36 +19,57 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
 
   if (!isOpen) return null;
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus('submitting');
     
+    // Prepare data for Web3Forms
+    const submissionData = new FormData(e.currentTarget);
+    submissionData.append("access_key", "1c447079-9d3b-4f59-b968-93f3570e77df");
+
     try {
-      // Initialize Gemini to "process" the inquiry
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-      const response = await ai.models.generateContent({
-        model: 'gemini-3-flash-preview',
-        contents: `Analyze this inquiry for MoonspringAI and provide a 1-sentence professional confirmation of how we can help. 
-        Name: ${formData.name}
-        Subject: ${formData.subject}
-        Message: ${formData.message}`,
-        config: {
-          systemInstruction: "You are a professional triage assistant for MoonspringAI. Categorize the user's request and provide a reassuring, high-tech response about their specific needs.",
+      // 1. Trigger AI Triage in parallel for better UX
+      const aiPromise = (async () => {
+        try {
+          const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+          const response = await ai.models.generateContent({
+            model: 'gemini-3-flash-preview',
+            contents: `Analyze this inquiry for MoonspringAI and provide a 1-sentence professional confirmation of how we can help. 
+            Name: ${formData.name}
+            Subject: ${formData.subject}
+            Message: ${formData.message}`,
+            config: {
+              systemInstruction: "You are a professional triage assistant for MoonspringAI. Categorize the user's request and provide a reassuring, high-tech response about their specific needs.",
+            }
+          });
+          return response.text || "Our specialists are reviewing your request details.";
+        } catch (err) {
+          return "Our team is analyzing your request for immediate prioritization.";
         }
+      })();
+
+      // 2. Submit to Web3Forms
+      const web3Promise = fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: submissionData
       });
 
-      setAiAnalysis(response.text || "Our specialists are reviewing your request details.");
-      
-      // Simulate the "Sending" delay
-      await new Promise(resolve => setTimeout(resolve, 800));
-      
-      setStatus('success');
-      // Reset form after a successful "send"
-      setFormData({ name: '', email: '', subject: 'AI Consulting Inquiry', message: '' });
+      // Wait for both (or at least the submission)
+      const [aiText, response] = await Promise.all([aiPromise, web3Promise]);
+      const data = await response.json();
+
+      if (data.success) {
+        setAiAnalysis(aiText);
+        setStatus('success');
+        // Reset form
+        setFormData({ name: '', email: '', subject: 'AI Consulting Inquiry', message: '' });
+      } else {
+        throw new Error(data.message || "Submission failed");
+      }
     } catch (error) {
       console.error("Submission error:", error);
-      // Fallback if AI fails, still show success as the data "sent" to the email in logic
-      setStatus('success');
+      alert("There was an error sending your message. Please try again or contact us directly at hello@moonspringai.com");
+      setStatus('idle');
     }
   };
 
@@ -87,7 +108,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-2">Message Dispatched!</h3>
               <p className="text-slate-500 mb-6 px-4">
-                Your inquiry has been successfully routed to <strong>hello@moonspringai.com</strong>.
+                Your inquiry has been successfully sent to the MoonspringAI team.
               </p>
               
               {aiAnalysis && (
@@ -112,6 +133,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                   <input 
                     required
                     type="text" 
+                    name="name"
                     placeholder="Jane Doe"
                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all text-sm"
                     value={formData.name}
@@ -123,6 +145,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                   <input 
                     required
                     type="email" 
+                    name="email"
                     placeholder="jane@company.com"
                     className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all text-sm"
                     value={formData.email}
@@ -134,14 +157,15 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
               <div className="space-y-1">
                 <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Subject</label>
                 <select 
+                  name="subject"
                   className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all text-sm appearance-none"
                   value={formData.subject}
                   onChange={e => setFormData({...formData, subject: e.target.value})}
                 >
-                  <option>AI Consulting Inquiry</option>
-                  <option>Salesforce Einstein Integration</option>
-                  <option>Custom AI Product Development</option>
-                  <option>Other / General</option>
+                  <option value="AI Consulting Inquiry">AI Consulting Inquiry</option>
+                  <option value="Salesforce Einstein Integration">Salesforce Einstein Integration</option>
+                  <option value="Custom AI Product Development">Custom AI Product Development</option>
+                  <option value="Other / General">Other / General</option>
                 </select>
               </div>
 
@@ -149,6 +173,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                 <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Message</label>
                 <textarea 
                   required
+                  name="message"
                   rows={4}
                   placeholder="Tell us about your project or business needs..."
                   className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all text-sm resize-none"
@@ -168,15 +193,15 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    <span>AI Processing...</span>
+                    <span>Submitting...</span>
                   </div>
                 ) : (
-                  "Send"
+                  "Send Message"
                 )}
               </button>
               
               <p className="text-[10px] text-center text-slate-400 mt-4 leading-relaxed">
-                By submitting this form, you agree to our privacy policy. Your information is securely encrypted and routed to our solutions team.
+                By submitting this form, you agree to our privacy policy. Your information is securely handled via Web3Forms and routed to our solutions team.
               </p>
             </form>
           )}
