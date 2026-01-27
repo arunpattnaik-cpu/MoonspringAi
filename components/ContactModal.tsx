@@ -39,7 +39,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
 
       setAiAnalysis(response.text || "Our specialists are reviewing your request details.");
       
-      // Simulate the "Sending to hello@moonspringai.com" delay
+      // Simulate the "Sending" delay
       await new Promise(resolve => setTimeout(resolve, 800));
       
       setStatus('success');
@@ -171,7 +171,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                     <span>AI Processing...</span>
                   </div>
                 ) : (
-                  "Send to hello@moonspringai.com"
+                  "Send"
                 )}
               </button>
               

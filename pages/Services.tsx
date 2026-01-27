@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface ServicesProps {
@@ -68,7 +67,7 @@ export const Services: React.FC<ServicesProps> = ({ onConsultClick }) => {
           </div>
           <div className="relative group">
             <div className="absolute -inset-6 bg-slate-100 rounded-[3rem] -z-10 transition-transform group-hover:scale-105 duration-700"></div>
-            <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1000" alt="Busy Office" className="rounded-[2.5rem] shadow-2xl grayscale brightness-90" />
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1000" alt="Busy Office Environment" className="rounded-[2.5rem] shadow-2xl grayscale brightness-90" />
             <div className="absolute -bottom-10 -right-10 bg-white p-10 rounded-3xl shadow-2xl border border-slate-100 max-w-[280px]">
               <div className="text-red-600 font-bold text-5xl mb-2">65%</div>
               <p className="text-xs text-slate-500 uppercase font-bold tracking-widest">Support Burnout Rate</p>
