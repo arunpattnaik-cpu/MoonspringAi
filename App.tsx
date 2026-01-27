@@ -5,6 +5,7 @@ import { Home } from './pages/Home';
 import { Salesforce } from './pages/Salesforce';
 import { About } from './pages/About';
 import { Consulting } from './pages/Consulting';
+import { Services } from './pages/Services';
 import { ChatBot } from './components/ChatBot';
 import { ContactModal } from './components/ContactModal';
 
@@ -19,6 +20,8 @@ const App: React.FC = () => {
     switch (activeTab) {
       case 'home':
         return <Home onConsultClick={openContact} />;
+      case 'services':
+        return <Services onConsultClick={openContact} />;
       case 'consulting':
         return <Consulting onConsultClick={openContact} />;
       case 'salesforce':

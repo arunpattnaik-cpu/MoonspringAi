@@ -38,7 +38,7 @@ export const Logo: React.FC<{ className?: string }> = ({ className = "h-8" }) =>
         MOONSPRING<span className="text-blue-600">AI</span>
       </span>
       <span className="text-[10px] uppercase tracking-[0.2em] font-semibold text-slate-400 -mt-0.5">
-        Enterprise Intelligence
+        Enterprise Grade Intelligence
       </span>
     </div>
   </div>

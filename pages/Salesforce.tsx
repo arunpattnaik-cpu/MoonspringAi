@@ -30,115 +30,113 @@ export const Salesforce: React.FC<SalesforceProps> = ({ onConsultClick }) => {
   ];
 
   return (
-    <div className="animate-in fade-in duration-700">
-      {/* Hero Section */}
-      <section className="relative py-20 bg-slate-50 border-b border-slate-200 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+    <div className="animate-in fade-in duration-1000">
+      {/* Universal Hero Section */}
+      <section className="relative min-h-[70vh] flex items-center pt-20 pb-32 overflow-hidden text-white bg-slate-950">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=2000" 
+            alt="Enterprise Technology" 
+            className="w-full h-full object-cover opacity-40 mix-blend-luminosity"
+          />
+          <div className="absolute inset-0 hero-gradient"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center relative z-10">
           <div>
-            <div className="flex items-center gap-2 mb-6">
-                <span className="bg-blue-600 text-white text-[10px] uppercase tracking-widest font-bold px-2 py-1 rounded">Certified</span>
-                <h3 className="text-blue-600 font-bold text-sm tracking-widest uppercase">Salesforce Einstein Partner</h3>
+            <div className="flex items-center gap-3 mb-8">
+                <span className="bg-blue-600 text-white text-[10px] uppercase tracking-widest font-bold px-3 py-1.5 rounded-full">Official Partner</span>
+                <span className="text-blue-400 font-bold text-xs tracking-widest uppercase">Salesforce Einstein</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 leading-tight">
-              Unlock the Power of <span className="text-blue-600">Einstein GPT</span>
+            <h1 className="text-5xl md:text-6xl font-bold mb-8 leading-[1.1]">
+              Unlock <span className="text-blue-400">Einstein GPT</span>
             </h1>
-            <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              We specialize in bridging the gap between your Salesforce CRM and next-generation AI. 
-              Our implementations help your sales, service, and marketing teams work smarter, not harder.
+            <p className="text-xl text-slate-200 mb-10 leading-relaxed font-light">
+              We bridge the gap between your Salesforce CRM and next-generation AI. Deploy custom agentic workflows that transform how you sell and serve.
             </p>
-            <div className="flex gap-4">
-              <button 
-                onClick={onConsultClick}
-                className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-xl shadow-blue-100 flex items-center"
-              >
-                Request Expert Consultation
-              </button>
-            </div>
+            <button 
+              onClick={onConsultClick}
+              className="bg-blue-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-blue-500 transition-all shadow-2xl shadow-blue-900/40"
+            >
+              Request Implementation Roadmap
+            </button>
           </div>
-          <div className="relative">
-            <div className="bg-white rounded-[2rem] p-8 shadow-2xl border border-slate-200 relative z-10">
-              <div className="space-y-6">
-                <div className="flex items-center gap-4 border-b border-slate-50 pb-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600">
-                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.183.244l-2.864 1.91A2 2 0 003.5 21H20.5a2 2 0 001.5-3.333l-2.572-2.239z" /></svg>
+          <div className="hidden md:block">
+            <div className="bg-white/10 backdrop-blur-xl rounded-[2.5rem] p-10 border border-white/20 shadow-2xl">
+              <div className="space-y-8">
+                <div className="flex items-center gap-6 pb-6 border-b border-white/10">
+                  <div className="w-14 h-14 bg-blue-500/20 rounded-2xl flex items-center justify-center text-blue-400 border border-blue-400/30">
+                    <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
                   </div>
                   <div>
-                    <h4 className="font-bold text-slate-800">Einstein Trust Layer</h4>
-                    <p className="text-xs text-slate-500 italic">Enterprise data privacy by design</p>
+                    <h4 className="font-bold text-xl text-white">Trust Layer Integration</h4>
+                    <p className="text-sm text-slate-400">Enterprise data privacy by design</p>
                   </div>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="p-4 bg-slate-50 rounded-2xl">
-                    <div className="text-blue-600 font-bold text-xl mb-1">35%</div>
-                    <p className="text-[10px] text-slate-500 uppercase tracking-tighter">Faster Case Resolution</p>
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="p-6 bg-white/5 rounded-3xl border border-white/5">
+                    <div className="text-blue-400 font-bold text-4xl mb-1">35%</div>
+                    <p className="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Case Resolution Speed</p>
                   </div>
-                  <div className="p-4 bg-slate-50 rounded-2xl">
-                    <div className="text-blue-600 font-bold text-xl mb-1">22%</div>
-                    <p className="text-[10px] text-slate-500 uppercase tracking-tighter">Increase in Pipeline</p>
+                  <div className="p-6 bg-white/5 rounded-3xl border border-white/5">
+                    <div className="text-blue-400 font-bold text-4xl mb-1">22%</div>
+                    <p className="text-[10px] text-slate-400 uppercase tracking-widest font-bold">Pipeline Growth</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-blue-500/10 blur-3xl rounded-full"></div>
           </div>
         </div>
       </section>
 
-      {/* Advanced Capabilities Section */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Beyond Standard Automation</h2>
-            <p className="text-slate-600">Deploy advanced AI capabilities directly inside your Salesforce instance.</p>
-          </div>
+      {/* Voice AI Scaling Section */}
+      <section className="py-32 px-6 bg-slate-50">
+        <div className="max-w-7xl mx-auto text-center mb-20">
+          <h2 className="text-4xl font-bold text-slate-900 mb-6">Einstein AI Accelerators</h2>
+          <p className="text-slate-600 max-w-2xl mx-auto text-lg">Deploy turnkey AI agents directly into your Salesforce environment.</p>
+        </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-shadow">
-              <div className="w-14 h-14 bg-indigo-600 rounded-2xl flex items-center justify-center text-white mb-8">
-                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
-                </svg>
+        <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            {[
+              { 
+                title: "Inbound Receptionist", 
+                desc: "24/7 AI receptionist that answers calls, books appointments, and qualifies leads directly into CRM.",
+                color: "bg-blue-600",
+                icon: "M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+              },
+              { 
+                title: "Outbound Sales", 
+                desc: "AI-powered outbound calls for follow-ups, renewals, and surveys—all synced with your brand voice.",
+                color: "bg-slate-900",
+                icon: "M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"
+              },
+              { 
+                title: "Website Widget", 
+                desc: "Turn any webpage into a live conversation. Visitors engage instantly, creating leads in Salesforce.",
+                color: "bg-indigo-600",
+                icon: "M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"
+              }
+            ].map((card, i) => (
+              <div key={i} className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-200 card-hover">
+                <div className={`w-14 h-14 ${card.color} rounded-2xl flex items-center justify-center text-white mb-8 shadow-xl`}>
+                  <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={card.icon} />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold mb-4">{card.title}</h3>
+                <p className="text-slate-500 text-sm leading-relaxed mb-6">{card.desc}</p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-[10px] font-bold text-blue-600 uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full">CRM Native</span>
+                  <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest bg-slate-50 px-3 py-1 rounded-full">Omni-Channel</span>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold mb-4">Einstein Voice Agents</h3>
-              <p className="text-slate-600 mb-6 leading-relaxed">
-                Empower your mobile workforce with voice-driven CRM interactions. Our voice agents allow sales reps to update opportunities, log calls, and query dashboards hands-free using natural language.
-              </p>
-              <ul className="space-y-3">
-                {["Real-time Speech-to-CRM updates", "Automated meeting transcription", "Contextual voice commands"].map((feat, i) => (
-                  <li key={i} className="flex items-center gap-2 text-sm text-slate-700">
-                    <svg className="w-4 h-4 text-indigo-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
-                    {feat}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="p-10 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-lg transition-shadow">
-              <div className="w-14 h-14 bg-blue-600 rounded-2xl flex items-center justify-center text-white mb-8">
-                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold mb-4">Intelligent Document Extraction</h3>
-              <p className="text-slate-600 mb-6 leading-relaxed">
-                Turn unstructured documents into structured Salesforce records instantly. Using Einstein OCR and custom LLM pipelines, we automate the ingestion of contracts, invoices, and IDs.
-              </p>
-              <ul className="space-y-3">
-                {["Automated Lead creation from PDFs", "Contract metadata extraction", "High-accuracy field mapping"].map((feat, i) => (
-                  <li key={i} className="flex items-center gap-2 text-sm text-slate-700">
-                    <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
-                    {feat}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+            ))}
         </div>
       </section>
 
       {/* Industry Solutions Section */}
-      <section className="py-24 px-6 bg-slate-900 text-white overflow-hidden relative">
-        <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+      <section className="py-32 px-6 bg-slate-950 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -149,65 +147,30 @@ export const Salesforce: React.FC<SalesforceProps> = ({ onConsultClick }) => {
           </svg>
         </div>
         
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Industry-Specific AI Accelerators</h2>
-            <p className="text-slate-400">Tailored Salesforce AI implementations for your sector.</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {industries.map((ind, i) => (
-              <div key={i} className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 p-8 rounded-3xl hover:bg-slate-800 transition-colors">
-                <div className="w-10 h-10 bg-blue-500/20 text-blue-400 rounded-lg flex items-center justify-center mb-6">
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={ind.icon} />
-                  </svg>
-                </div>
-                <h4 className="text-lg font-bold mb-4">{ind.name}</h4>
-                <ul className="space-y-3">
-                  {ind.cases.map((useCase, idx) => (
-                    <li key={idx} className="text-sm text-slate-400 flex items-start gap-2">
-                      <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 shrink-0"></span>
-                      {useCase}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-          
-          <div className="mt-16 text-center">
-             <button 
-               onClick={onConsultClick}
-               className="inline-flex items-center gap-2 text-blue-400 font-bold hover:text-blue-300 transition-colors"
-             >
-               View All 20+ Industry Blueprints
-               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-             </button>
-          </div>
+        <div className="max-w-7xl mx-auto relative z-10 text-center mb-20">
+          <h2 className="text-4xl font-bold mb-6">Industry Blueprints</h2>
+          <p className="text-slate-400 max-w-xl mx-auto text-lg">Pre-configured Einstein workflows tailored to your vertical.</p>
         </div>
-      </section>
 
-      {/* CTA Footer */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block p-1 px-4 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-widest mb-6">Start Your Transformation</div>
-            <h2 className="text-4xl font-bold mb-6 text-slate-900 leading-tight">Ready to modernize your Salesforce stack?</h2>
-            <p className="text-slate-600 mb-10 text-lg">Join the leading enterprises that have already optimized their workflows with MoonspringAI's Salesforce expertise.</p>
-            <div className="flex flex-wrap justify-center gap-4">
-                <button 
-                  onClick={onConsultClick}
-                  className="bg-slate-900 text-white px-10 py-4 rounded-xl font-bold hover:bg-slate-800 transition-all shadow-xl"
-                >
-                  Schedule Technical Demo
-                </button>
-                <button 
-                  onClick={onConsultClick}
-                  className="bg-white border border-slate-200 text-slate-900 px-10 py-4 rounded-xl font-bold hover:bg-slate-50 transition-all"
-                >
-                  Contact a Solutions Architect
-                </button>
+        <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-6">
+          {industries.map((ind, i) => (
+            <div key={i} className="bg-white/5 backdrop-blur-md border border-white/10 p-8 rounded-[2.5rem] hover:bg-white/10 transition-all card-hover">
+              <div className="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center mb-8 border border-blue-400/20">
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={ind.icon} />
+                </svg>
+              </div>
+              <h4 className="text-xl font-bold mb-6">{ind.name}</h4>
+              <ul className="space-y-4">
+                {ind.cases.map((useCase, idx) => (
+                  <li key={idx} className="text-xs text-slate-400 flex items-start gap-3">
+                    <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 shrink-0 shadow-[0_0_8px_rgba(59,130,246,0.5)]"></span>
+                    {useCase}
+                  </li>
+                ))}
+              </ul>
             </div>
+          ))}
         </div>
       </section>
     </div>

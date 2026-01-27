@@ -14,6 +14,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTa
 
   const navItems = [
     { id: 'home', label: 'Home' },
+    { id: 'services', label: 'Services' },
     { id: 'consulting', label: 'Consulting' },
     { id: 'salesforce', label: 'Salesforce AI' },
     { id: 'about', label: 'About Us' },
@@ -117,6 +118,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTa
           <div>
             <h4 className="text-white font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
+              <li><button onClick={() => setActiveTab('services')} className="hover:text-blue-400">Voice AI Agents</button></li>
               <li><button onClick={() => setActiveTab('consulting')} className="hover:text-blue-400">Strategy & Consulting</button></li>
               <li><button onClick={() => setActiveTab('salesforce')} className="hover:text-blue-400">Salesforce Einstein GPT</button></li>
               <li><button onClick={() => setActiveTab('home')} className="hover:text-blue-400">AI Product Development</button></li>
@@ -140,7 +142,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTa
           </div>
         </div>
         <div className="max-w-7xl mx-auto border-t border-slate-800 mt-12 pt-8 text-center text-xs text-slate-500">
-          © {new Date().getFullYear()} MoonspringAI. All rights reserved.
+          © {new Date().getFullYear()} MoonspringAI. All rights reserved. Reach us at hello@moonspringai.com
         </div>
       </footer>
     </div>
