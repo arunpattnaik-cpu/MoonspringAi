@@ -107,42 +107,42 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTa
         {children}
       </main>
 
-      <footer className="bg-slate-900 text-slate-300 py-12 px-6">
+      <footer className="bg-slate-950 text-slate-300 py-16 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="col-span-1 md:col-span-1">
-            <Logo className="h-8 mb-4 brightness-0 invert" />
-            <p className="text-sm leading-relaxed text-slate-400">
+            <Logo invert className="h-9 mb-6" />
+            <p className="text-sm leading-relaxed text-slate-400 max-w-xs">
               Pioneering the future of enterprise intelligence through bespoke AI consulting and world-class product implementations.
             </p>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-sm">
-              <li><button onClick={() => setActiveTab('services')} className="hover:text-blue-400">Voice AI Agents</button></li>
-              <li><button onClick={() => setActiveTab('consulting')} className="hover:text-blue-400">Strategy & Consulting</button></li>
-              <li><button onClick={() => setActiveTab('salesforce')} className="hover:text-blue-400">Salesforce Einstein GPT</button></li>
-              <li><button onClick={() => setActiveTab('home')} className="hover:text-blue-400">AI Product Development</button></li>
+            <h4 className="text-white font-semibold mb-6">Services</h4>
+            <ul className="space-y-3 text-sm">
+              <li><button onClick={() => setActiveTab('services')} className="hover:text-blue-400 transition-colors">Voice AI Agents</button></li>
+              <li><button onClick={() => setActiveTab('consulting')} className="hover:text-blue-400 transition-colors">Strategy & Consulting</button></li>
+              <li><button onClick={() => setActiveTab('salesforce')} className="hover:text-blue-400 transition-colors">Salesforce Einstein GPT</button></li>
+              <li><button onClick={() => setActiveTab('home')} className="hover:text-blue-400 transition-colors">AI Product Development</button></li>
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-4">Company</h4>
-            <ul className="space-y-2 text-sm">
-              <li><button onClick={() => setActiveTab('about')} className="hover:text-blue-400">About Our Team</button></li>
-              <li><button className="hover:text-blue-400">Careers</button></li>
-              <li><button className="hover:text-blue-400">Privacy Policy</button></li>
+            <h4 className="text-white font-semibold mb-6">Company</h4>
+            <ul className="space-y-3 text-sm">
+              <li><button onClick={() => setActiveTab('about')} className="hover:text-blue-400 transition-colors">About Our Team</button></li>
+              <li><button className="hover:text-blue-400 transition-colors">Careers</button></li>
+              <li><button className="hover:text-blue-400 transition-colors">Privacy Policy</button></li>
             </ul>
           </div>
           <div>
-            <h4 className="text-white font-semibold mb-4">Newsletter</h4>
-            <p className="text-sm text-slate-400 mb-4">Stay updated with the latest in AI.</p>
-            <div className="flex">
-              <input type="email" placeholder="Email address" className="bg-slate-800 border-none rounded-l-md px-4 py-2 w-full text-sm focus:ring-1 focus:ring-blue-500" />
-              <button className="bg-blue-600 text-white px-4 py-2 rounded-r-md text-sm font-semibold hover:bg-blue-700 transition-colors">Join</button>
+            <h4 className="text-white font-semibold mb-6">Stay Connected</h4>
+            <p className="text-sm text-slate-400 mb-6">Join our monthly brief on the AI frontier.</p>
+            <div className="flex gap-2">
+              <input type="email" placeholder="Email address" className="bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 w-full text-sm focus:ring-2 focus:ring-blue-500 outline-none transition-all" />
+              <button className="bg-blue-600 text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-blue-700 transition-colors shadow-lg shadow-blue-900/20">Join</button>
             </div>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto border-t border-slate-800 mt-12 pt-8 text-center text-xs text-slate-500">
-          © {new Date().getFullYear()} MoonspringAI. All rights reserved. Reach us at hello@moonspringai.com
+        <div className="max-w-7xl mx-auto border-t border-white/5 mt-16 pt-8 text-center text-[10px] uppercase tracking-widest text-slate-600">
+          © {new Date().getFullYear()} MoonspringAI. Built for the era of intelligence. hello@moonspringai.com
         </div>
       </footer>
     </div>
