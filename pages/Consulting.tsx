@@ -31,16 +31,6 @@ export const Consulting: React.FC<ConsultingProps> = ({ onConsultClick }) => {
               We bridge the gap between complex neural architectures and market-ready products. 
               Our framework accelerates your roadmap from ideation to production.
             </p>
-            <div className="flex gap-6">
-              <div className="px-8 py-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10">
-                <div className="text-3xl font-bold text-blue-400">150+</div>
-                <div className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Audits Completed</div>
-              </div>
-              <div className="px-8 py-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10">
-                <div className="text-3xl font-bold text-blue-400">40%</div>
-                <div className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Cost Reduction</div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

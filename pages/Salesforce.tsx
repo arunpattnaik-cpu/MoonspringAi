@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 interface SalesforceProps {
@@ -19,12 +20,12 @@ export const Salesforce: React.FC<SalesforceProps> = ({ onConsultClick }) => {
     {
       name: "Retail & E-commerce",
       icon: "M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z",
-      cases: ["Hyper-Personalized Marketing", "Visual Search Integration", "Inventory Demand Prediction"]
+      cases: ["Hyper-Personalised Marketing", "Visual Search Integration", "Inventory Demand Prediction"]
     },
     {
       name: "Manufacturing",
       icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
-      cases: ["Predictive Maintenance Alerts", "Supply Chain Optimization", "Field Service AI Assistant"]
+      cases: ["Predictive Maintenance Alerts", "Supply Chain Optimisation", "Field Service AI Assistant"]
     }
   ];
 
@@ -45,7 +46,7 @@ export const Salesforce: React.FC<SalesforceProps> = ({ onConsultClick }) => {
             Agentforce Implementation
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-[1.1]">
-            Revolutionize Your <br className="hidden md:block"/>
+            Revolutionise Your <br className="hidden md:block"/>
             <span className="text-blue-400">Salesforce Customer Service</span>
           </h1>
           <p className="text-xl text-slate-200 max-w-3xl mx-auto mb-16 font-light leading-relaxed">
@@ -120,7 +121,7 @@ export const Salesforce: React.FC<SalesforceProps> = ({ onConsultClick }) => {
               </p>
               <div className="space-y-8">
                 {[
-                  { title: "Fully Trained Intelligence", desc: "We customize the AI specifically for your business, training it to expertly handle your top 3 most common inquiry types." },
+                  { title: "Fully Trained Intelligence", desc: "We customise the AI specifically for your business, training it to expertly handle your top 3 most common inquiry types." },
                   { title: "Native Salesforce Integration", desc: "Call summaries and full transcripts are stored directly in Salesforce, creating a seamless workflow for your existing team." },
                   { title: "Intelligent Escalation", desc: "When a customer needs human assistance, it seamlessly transfers the call with complete context." }
                 ].map((item, i) => (
@@ -177,7 +178,7 @@ export const Salesforce: React.FC<SalesforceProps> = ({ onConsultClick }) => {
               {
                 title: "Monthly Managed",
                 price: "Usage Based",
-                features: ["Infrastructure maintenance", "Included usage minutes", "Reporting & Analytics", "Ongoing optimization"],
+                features: ["Infrastructure maintenance", "Included usage minutes", "Reporting & Analytics", "Ongoing optimisation"],
                 color: "blue-600",
                 popular: true
               },
@@ -263,7 +264,7 @@ export const Salesforce: React.FC<SalesforceProps> = ({ onConsultClick }) => {
             Start Your Transformation
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
           </button>
-          <p className="mt-8 text-sm text-slate-400">Join leading enterprises that have optimized their support stack with MoonspringAI.</p>
+          <p className="mt-8 text-sm text-slate-400">Join leading enterprises that have optimised their support stack with MoonspringAI.</p>
         </div>
       </section>
     </div>

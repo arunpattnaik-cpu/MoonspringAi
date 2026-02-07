@@ -1,45 +1,69 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoonspringAI | Enterprise Grade Intelligence</title>
+    <title>MoonspringAI | Enterprise AI Consulting</title>
     
-    <!-- Favicon - New Apex Monolith (M+S) Solid Silhouette -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 40 40' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 34V10C4 7.79086 5.79086 6 8 6H12L20 18L28 6H32C34.2091 6 36 7.79086 36 10V34H28V18L20 30L12 18V34H4Z' fill='%230f172a'/%3E%3Cpath d='M20 18L28 6H32C34.2091 6 36 7.79086 36 10V18C36 21 34 22 32 22H28C26 22 24 23 24 26V34H16V26C16 21 18 20 20 20H24C26 20 28 19 28 16V10L20 22V18Z' fill='%232563eb'/%3E%3C/svg%3E">
+    <!-- Favicon - Updated to match the new Moon-Spring professional logo -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 20C15 35 15 65 30 80C22 70 22 30 30 20Z' fill='%230f172a'/%3E%3Cpath d='M30 80V20L55 55L80 20V80' stroke='%231a4175' stroke-width='8' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='80' cy='20' r='6' fill='%231a4175'/%3E%3C/svg%3E">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@400;500;600;700;800&family=Orbitron:wght@800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --brand-blue: #1a4175;
+            --brand-dark: #0f172a;
+        }
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
+            background-color: #ffffff;
         }
         h1, h2, h3, h4, .font-display {
             font-family: 'Lexend', sans-serif;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
         }
         .glass-nav {
             background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(26, 65, 117, 0.1);
         }
-        .gradient-text {
-            background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .card-hover {
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .card-hover:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.08), 0 18px 36px -18px rgba(0, 0, 0, 0.03);
+        .noise-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            opacity: 0.02;
+            z-index: 9999;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
         .hero-gradient {
-            background: linear-gradient(to right, #020617 0%, rgba(2, 6, 23, 0.9) 50%, transparent 100%);
+            background: radial-gradient(circle at 50% 50%, rgba(26, 65, 117, 0.1) 0%, transparent 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .card-shadow:hover {
+            box-shadow: 0 20px 40px -12px rgba(26, 65, 117, 0.15);
+            transform: translateY(-4px);
+        }
+        @keyframes subtle-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .float-animation {
+            animation: subtle-float 6s ease-in-out infinite;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
     </style>
 <script type="importmap">
@@ -54,7 +78,8 @@
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-<body class="bg-white text-slate-900 antialiased">
+<body class="antialiased selection:bg-blue-100 selection:text-blue-900">
+    <div class="noise-overlay"></div>
     <div id="root"></div>
 <script type="module" src="/index.tsx"></script>
 </body>

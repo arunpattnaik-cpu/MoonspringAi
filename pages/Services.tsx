@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 interface ServicesProps {
@@ -22,7 +23,7 @@ export const Services: React.FC<ServicesProps> = ({ onConsultClick }) => {
             AI Operations
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-[1.1]">
-            Revolutionize Your <br className="hidden md:block"/>
+            Revolutionise Your <br className="hidden md:block"/>
             <span className="text-blue-400">Customer Support</span>
           </h1>
           <p className="text-xl text-slate-200 max-w-3xl mx-auto mb-16 font-light leading-relaxed">
@@ -79,9 +80,9 @@ export const Services: React.FC<ServicesProps> = ({ onConsultClick }) => {
       {/* Universal CTA */}
       <section className="py-32 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-8 text-slate-900 leading-tight">Ready to Modernize Operations?</h2>
+          <h2 className="text-4xl font-bold mb-8 text-slate-900 leading-tight">Ready to Modernise Operations?</h2>
           <p className="text-xl text-slate-600 mb-12 font-light">
-            Join leading enterprises that have optimized their support stack with MoonspringAI.
+            Join leading enterprises that have optimised their support stack with MoonspringAI.
           </p>
           <button 
             onClick={onConsultClick}

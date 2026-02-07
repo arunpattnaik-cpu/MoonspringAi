@@ -34,17 +34,17 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
           const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
           const response = await ai.models.generateContent({
             model: 'gemini-3-flash-preview',
-            contents: `Analyze this inquiry for MoonspringAI and provide a 1-sentence professional confirmation of how we can help. 
+            contents: `Analyse this inquiry for MoonspringAI and provide a 1-sentence professional confirmation of how we can help. 
             Name: ${formData.name}
             Subject: ${formData.subject}
             Message: ${formData.message}`,
             config: {
-              systemInstruction: "You are a professional triage assistant for MoonspringAI. Categorize the user's request and provide a reassuring, high-tech response about their specific needs.",
+              systemInstruction: "You are a professional triage assistant for MoonspringAI. Categorise the user's request and provide a reassuring, high-tech response about their specific needs.",
             }
           });
           return response.text || "Our specialists are reviewing your request details.";
         } catch (err) {
-          return "Our team is analyzing your request for immediate prioritization.";
+          return "Our team is analysing your request for immediate prioritisation.";
         }
       })();
 

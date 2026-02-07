@@ -60,16 +60,9 @@ export const Home: React.FC<HomeProps> = ({ onConsultClick }) => {
              <div className="relative z-10 p-2 rounded-[2.5rem] bg-gradient-to-br from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-white/10 overflow-hidden shadow-2xl">
                 <img 
                   src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Modern AI Visualization" 
+                  alt="Modern AI Visualisation" 
                   className="rounded-[2rem] w-full object-cover aspect-[4/3] mix-blend-overlay brightness-125" 
                 />
-             </div>
-             
-             <div className="absolute -bottom-8 -left-8 z-20 bg-slate-900 p-6 rounded-2xl shadow-2xl border border-white/10 max-w-[240px] animate-bounce-slow">
-                <div className="text-blue-400 font-bold text-3xl mb-1">98%</div>
-                <p className="text-[10px] text-slate-100 font-bold uppercase tracking-wider leading-relaxed">
-                  Efficiency optimization achieved for partners
-                </p>
              </div>
           </div>
         </div>

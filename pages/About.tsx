@@ -44,9 +44,16 @@ export const About: React.FC = () => {
                         Born in the heart of the AI revolution, MoonspringAI began as a collective of engineers, data scientists, and business strategists who saw a recurring problem: companies had plenty of data, but no way to turn it into actionable intelligence.
                     </p>
                     <p>
+                        We work with growing UK businesses, supported by a team with experience delivering for large, complex organisations.
+                    </p>
+                    <p>
+                        We don’t “install AI tools”. We partner with you to simplify operations, remove manual work, and build automation where it genuinely pays off.
+                    </p>
+                    <p>
                         Today, we serve a global clientele ranging from high-growth startups to Fortune 500 enterprises. We don't just "implement AI"—we partner with you to reinvent how your business operates in an automated world.
                     </p>
                 </div>
+                {/* 
                 <div className="grid grid-cols-2 gap-12 mt-12">
                     <div className="p-6 bg-slate-50 rounded-3xl border border-slate-100">
                         <div className="text-4xl font-bold text-blue-600">50+</div>
@@ -57,6 +64,7 @@ export const About: React.FC = () => {
                         <div className="text-xs text-slate-500 uppercase tracking-widest font-bold mt-2">Proprietary Products</div>
                     </div>
                 </div>
+                */}
             </div>
         </div>
       </section>
