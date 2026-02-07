@@ -49,9 +49,6 @@ export const About: React.FC = () => {
                     <p>
                         We don’t “install AI tools”. We partner with you to simplify operations, remove manual work, and build automation where it genuinely pays off.
                     </p>
-                    <p>
-                        Today, we serve a global clientele ranging from high-growth startups to Fortune 500 enterprises. We don't just "implement AI"—we partner with you to reinvent how your business operates in an automated world.
-                    </p>
                 </div>
                 {/* 
                 <div className="grid grid-cols-2 gap-12 mt-12">
