@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Logo } from './Logo';
+import footerLogo from "../assets/logo2.png";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -111,7 +112,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTa
       <footer className="bg-[#020617] text-slate-400 py-24 px-6 border-t border-white/5">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
           <div className="col-span-1 md:col-span-1 flex flex-col items-start">
-            <Logo invert className="h-[120px] w-[120px] mb-8" />
+            <Logo footer className="h-[120px] w-[120px] mb-8" />
             <p className="text-sm leading-relaxed text-slate-500 max-w-xs mt-4">
               Building the next generation of enterprise intelligence. Architected for scale, designed for security.
             </p>
