@@ -1,23 +1,38 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoonspringAI | Enterprise AI Consulting</title>
+    <title>MoonspringAI | Enterprise Grade Intelligence</title>
     
-    <!-- Favicon - Updated to use HD Square Icon -->
-    <link rel="icon" type="image/x-icon" href="/logo/HD Square_Icons_Mockups/Icons/favicon.ico">
-
+    <!-- Favicon - Updated to match the new Moon-Spring professional logo -->
+ <link rel="icon" type="image/x-icon" href="/logo/HD Square_Icons_Mockups/Icons/favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            cyan: '#26ebff',
+                            blue: '#0073fc',
+                        },
+                        slate: {
+                            950: '#020617',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Lexend', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lexend:wght@400;500;600;700;800&family=Orbitron:wght@800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --brand-blue: #26ebff;
-            --brand-dark: #0073fc;
-        }
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
@@ -30,7 +45,7 @@
         .glass-nav {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(26, 65, 117, 0.1);
+            border-bottom: 1px solid rgba(0, 115, 252, 0.1);
         }
         .noise-overlay {
             position: fixed;
@@ -41,14 +56,14 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
         .hero-gradient {
-            background: radial-gradient(circle at 50% 50%, rgba(26, 65, 117, 0.1) 0%, transparent 100%);
+            background: radial-gradient(circle at 50% 50%, rgba(0, 115, 252, 0.1) 0%, transparent 100%);
         }
         .card-shadow {
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .card-shadow:hover {
-            box-shadow: 0 20px 40px -12px rgba(26, 65, 117, 0.15);
+            box-shadow: 0 20px 40px -12px rgba(0, 115, 252, 0.15);
             transform: translateY(-4px);
         }
         @keyframes subtle-float {
@@ -78,7 +93,7 @@
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-<body class="antialiased selection:bg-blue-100 selection:text-blue-900">
+<body class="antialiased selection:bg-brand-cyan/30 selection:text-brand-blue">
     <div class="noise-overlay"></div>
     <div id="root"></div>
 <script type="module" src="/index.tsx"></script>
