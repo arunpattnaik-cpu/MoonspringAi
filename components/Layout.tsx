@@ -26,10 +26,6 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTa
 
   return (
     <div className="min-h-screen flex flex-col">
-      {/* 
-          Added 'relative' to the nav to ensure absolute children (mobile menu) 
-          are positioned correctly relative to the header bar.
-      */}
       <nav className="glass-nav sticky top-0 z-[100] px-6 py-4 relative">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-8">
           <button onClick={() => handleNavClick('home')} className="hover:opacity-90 transition-all duration-300">
@@ -43,16 +39,16 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTa
                 key={item.id}
                 onClick={() => setActiveTab(item.id)}
                 className={`text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 relative group ${
-                  activeTab === item.id ? 'text-[#1a4175]' : 'text-slate-500 hover:text-slate-900'
+                  activeTab === item.id ? 'text-brand-blue' : 'text-slate-500 hover:text-slate-900'
                 }`}
               >
                 {item.label}
-                <span className={`absolute -bottom-1 left-0 w-full h-[2px] bg-[#1a4175] transition-transform duration-300 origin-left ${activeTab === item.id ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-50'}`}></span>
+                <span className={`absolute -bottom-1 left-0 w-full h-[2px] bg-brand-blue transition-transform duration-300 origin-left ${activeTab === item.id ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-50'}`}></span>
               </button>
             ))}
             <button 
               onClick={onGetStarted}
-              className="bg-[#1a4175] text-white px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-[#0f172a] transition-all shadow-xl shadow-blue-900/10 active:scale-95"
+              className="bg-brand-blue text-white px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest hover:bg-brand-blue/90 transition-all shadow-xl shadow-brand-blue/10 active:scale-95"
             >
               Consult Now
             </button>
@@ -79,7 +75,6 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTa
         {/* Mobile Menu Overlay */}
         {isMenuOpen && (
           <>
-            {/* Backdrop to close menu when clicking outside */}
             <div 
               className="fixed inset-0 bg-slate-900/20 backdrop-blur-sm lg:hidden z-[90]" 
               onClick={() => setIsMenuOpen(false)}
@@ -91,7 +86,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTa
                     key={item.id}
                     onClick={() => handleNavClick(item.id)}
                     className={`text-left text-sm font-black uppercase tracking-widest transition-colors py-2 border-b border-slate-50 ${
-                      activeTab === item.id ? 'text-[#1a4175]' : 'text-slate-900 hover:text-[#1a4175]'
+                      activeTab === item.id ? 'text-brand-blue' : 'text-slate-900 hover:text-brand-blue'
                     }`}
                   >
                     {item.label}
@@ -103,7 +98,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTa
                       setIsMenuOpen(false);
                       onGetStarted?.();
                     }}
-                    className="w-full bg-[#1a4175] text-white py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-[#0f172a] transition-all shadow-lg"
+                    className="w-full bg-brand-blue text-white py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-brand-blue/90 transition-all shadow-lg"
                   >
                     Consult Now
                   </button>
@@ -121,7 +116,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTa
       <footer className="bg-[#020617] text-slate-400 py-24 px-6 border-t border-white/5">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
           <div className="col-span-1 md:col-span-1 flex flex-col items-start">
-            <Logo footer className="h-10 mb-8" />
+            <Logo invert className="h-10 mb-8" />
             <p className="text-sm leading-relaxed text-slate-500 max-w-xs mt-4">
               Building the next generation of enterprise intelligence. Architected for scale, designed for security.
             </p>
@@ -147,8 +142,8 @@ export const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTa
             <h4 className="text-white text-xs font-black uppercase tracking-[0.2em] mb-8">Connection</h4>
             <p className="text-sm text-slate-500 mb-8 font-medium">Quarterly briefings on sovereign AI.</p>
             <div className="flex flex-col gap-3">
-              <input type="email" placeholder="Professional Email" className="bg-white/5 border border-white/10 rounded-xl px-5 py-4 w-full text-sm focus:ring-2 focus:ring-blue-600 outline-none transition-all text-white" />
-              <button className="bg-[#1a4175] text-white px-6 py-4 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-slate-800 transition-colors">Register</button>
+              <input type="email" placeholder="Professional Email" className="bg-white/5 border border-white/10 rounded-xl px-5 py-4 w-full text-sm focus:ring-2 focus:ring-brand-blue outline-none transition-all text-white" />
+              <button className="bg-brand-blue text-white px-6 py-4 rounded-xl text-xs font-black uppercase tracking-widest hover:bg-brand-blue/90 transition-colors">Register</button>
             </div>
           </div>
         </div>

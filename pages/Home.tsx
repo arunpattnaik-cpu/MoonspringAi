@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 interface HomeProps {
@@ -22,16 +21,16 @@ export const Home: React.FC<HomeProps> = ({ onConsultClick }) => {
         
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center relative z-10">
           <div className="text-left">
-            <div className="inline-flex items-center space-x-2 bg-blue-500/20 backdrop-blur-md border border-blue-400/30 text-blue-100 px-4 py-1.5 rounded-full text-xs font-semibold mb-8">
+            <div className="inline-flex items-center space-x-2 bg-brand-cyan/20 backdrop-blur-md border border-brand-cyan/30 text-brand-cyan px-4 py-1.5 rounded-full text-xs font-semibold mb-8">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-400"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-cyan opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-cyan"></span>
               </span>
               <span className="tracking-wider uppercase">Pioneering Enterprise AI</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold leading-[1.1] mb-6 text-white">
-              The Next Frontier of <span className="text-blue-400">Intelligence</span>
+              The Next Frontier of <span className="text-brand-cyan">Intelligence</span>
             </h1>
             
             <p className="text-xl text-slate-200 mb-10 leading-relaxed max-w-lg font-light">
@@ -41,7 +40,7 @@ export const Home: React.FC<HomeProps> = ({ onConsultClick }) => {
             <div className="flex flex-wrap gap-5">
               <button 
                 onClick={onConsultClick}
-                className="bg-blue-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-blue-500 transition-all shadow-2xl shadow-blue-900/40 flex items-center group ring-1 ring-blue-400/30"
+                className="bg-brand-blue text-white px-10 py-4 rounded-xl font-bold hover:bg-brand-blue/90 transition-all shadow-2xl shadow-brand-blue/40 flex items-center group ring-1 ring-white/20"
               >
                 Launch Consultation
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -57,7 +56,7 @@ export const Home: React.FC<HomeProps> = ({ onConsultClick }) => {
           </div>
           
           <div className="hidden lg:block relative">
-             <div className="relative z-10 p-2 rounded-[2.5rem] bg-gradient-to-br from-blue-500/20 to-purple-500/20 backdrop-blur-sm border border-white/10 overflow-hidden shadow-2xl">
+             <div className="relative z-10 p-2 rounded-[2.5rem] bg-gradient-to-br from-brand-cyan/20 to-brand-blue/20 backdrop-blur-sm border border-white/10 overflow-hidden shadow-2xl">
                 <img 
                   src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000" 
                   alt="Modern AI Visualisation" 
@@ -82,7 +81,7 @@ export const Home: React.FC<HomeProps> = ({ onConsultClick }) => {
                 title: "AI Strategy Consulting",
                 desc: "High-level advisory to identify high-ROI AI opportunities across your enterprise operations.",
                 icon: "M13 10V3L4 14H11V21L20 10H13Z",
-                color: "bg-blue-600"
+                color: "bg-brand-blue"
               },
               {
                 title: "Custom Agentic AI",
@@ -94,7 +93,7 @@ export const Home: React.FC<HomeProps> = ({ onConsultClick }) => {
                 title: "Enterprise Deployment",
                 desc: "Scalable infrastructure setup for private LLM instances, ensuring maximum security and data sovereignty.",
                 icon: "M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9",
-                color: "bg-indigo-600"
+                color: "bg-brand-cyan"
               }
             ].map((service, i) => (
               <div key={i} className="group p-10 rounded-[2.5rem] border border-slate-100 bg-white shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 card-hover">
@@ -107,7 +106,7 @@ export const Home: React.FC<HomeProps> = ({ onConsultClick }) => {
                 <p className="text-slate-500 mb-8 leading-relaxed">{service.desc}</p>
                 <button 
                   onClick={onConsultClick}
-                  className="text-blue-600 font-bold text-sm hover:text-blue-700 transition-colors flex items-center gap-2"
+                  className="text-brand-blue font-bold text-sm hover:text-brand-blue/80 transition-colors flex items-center gap-2"
                 >
                   Explore Pillar
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

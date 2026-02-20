@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { GoogleGenAI } from "@google/genai";
 
@@ -28,7 +27,6 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
     submissionData.append("access_key", "1c447079-9d3b-4f59-b968-93f3570e77df");
 
     try {
-      // 1. Trigger AI Triage in parallel for better UX
       const aiPromise = (async () => {
         try {
           const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
@@ -48,20 +46,17 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
         }
       })();
 
-      // 2. Submit to Web3Forms
       const web3Promise = fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: submissionData
       });
 
-      // Wait for both (or at least the submission)
       const [aiText, response] = await Promise.all([aiPromise, web3Promise]);
       const data = await response.json();
 
       if (data.success) {
         setAiAnalysis(aiText);
         setStatus('success');
-        // Reset form
         setFormData({ name: '', email: '', subject: 'AI Consulting Inquiry', message: '' });
       } else {
         throw new Error(data.message || "Submission failed");
@@ -75,13 +70,11 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
 
   return (
     <div className="fixed inset-0 z-[110] flex items-center justify-center px-4 py-6 overflow-y-auto">
-      {/* Overlay */}
       <div 
         className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity animate-in fade-in duration-300"
         onClick={onClose}
       ></div>
 
-      {/* Modal */}
       <div className="relative bg-white w-full max-w-lg rounded-3xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-300">
         <div className="p-8">
           <div className="flex justify-between items-start mb-6">
@@ -101,7 +94,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
 
           {status === 'success' ? (
             <div className="py-8 text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600">
+              <div className="w-16 h-16 bg-brand-cyan/20 rounded-full flex items-center justify-center mx-auto mb-6 text-brand-blue">
                 <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                 </svg>
@@ -112,8 +105,8 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
               </p>
               
               {aiAnalysis && (
-                <div className="mb-8 p-4 bg-blue-50 border border-blue-100 rounded-2xl text-left">
-                  <div className="text-[10px] font-bold text-blue-600 uppercase tracking-widest mb-1">Instant AI Triage</div>
+                <div className="mb-8 p-4 bg-brand-cyan/10 border border-brand-cyan/20 rounded-2xl text-left">
+                  <div className="text-[10px] font-bold text-brand-blue uppercase tracking-widest mb-1">Instant AI Triage</div>
                   <p className="text-sm text-slate-700 leading-relaxed italic">"{aiAnalysis}"</p>
                 </div>
               )}
@@ -135,7 +128,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                     type="text" 
                     name="name"
                     placeholder="Jane Doe"
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all text-sm"
+                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none transition-all text-sm"
                     value={formData.name}
                     onChange={e => setFormData({...formData, name: e.target.value})}
                   />
@@ -147,7 +140,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                     type="email" 
                     name="email"
                     placeholder="jane@company.com"
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all text-sm"
+                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none transition-all text-sm"
                     value={formData.email}
                     onChange={e => setFormData({...formData, email: e.target.value})}
                   />
@@ -158,7 +151,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                 <label className="text-xs font-bold text-slate-500 uppercase tracking-wider">Subject</label>
                 <select 
                   name="subject"
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all text-sm appearance-none"
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none transition-all text-sm appearance-none"
                   value={formData.subject}
                   onChange={e => setFormData({...formData, subject: e.target.value})}
                 >
@@ -176,7 +169,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
                   name="message"
                   rows={4}
                   placeholder="Tell us about your project or business needs..."
-                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all text-sm resize-none"
+                  className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-transparent outline-none transition-all text-sm resize-none"
                   value={formData.message}
                   onChange={e => setFormData({...formData, message: e.target.value})}
                 ></textarea>
@@ -185,7 +178,7 @@ export const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) =
               <button 
                 type="submit"
                 disabled={status === 'submitting'}
-                className="w-full mt-4 bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-xl shadow-blue-100 flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full mt-4 bg-brand-blue text-white py-4 rounded-xl font-bold hover:bg-brand-blue/90 transition-all shadow-xl shadow-brand-blue/10 flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {status === 'submitting' ? (
                   <div className="flex items-center gap-2">

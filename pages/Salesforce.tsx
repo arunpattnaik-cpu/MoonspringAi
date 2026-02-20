@@ -203,12 +203,12 @@ export const Salesforce: React.FC<SalesforceProps> = ({ onConsultClick }) => {
         
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-left w-full">
           <div className="max-w-3xl">
-            <div className="inline-block px-4 py-1.5 bg-blue-600/20 border border-blue-400/30 rounded-full text-blue-200 text-xs font-bold tracking-widest uppercase mb-8">
+            <div className="inline-block px-4 py-1.5 bg-brand-blue/20 border border-brand-cyan/30 rounded-full text-brand-cyan text-xs font-bold tracking-widest uppercase mb-8">
               Agentforce Specialist
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight tracking-tight font-display">
               Agentforce <br/>
-              <span className="text-blue-400">Vertical Intelligence</span> <br/>
+              <span className="text-brand-cyan">Vertical Intelligence</span> <br/>
               <span className="text-white">on Salesforce</span>
             </h1>
             <p className="text-xl text-slate-200 mb-10 leading-relaxed font-light">
@@ -232,33 +232,29 @@ export const Salesforce: React.FC<SalesforceProps> = ({ onConsultClick }) => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {sectors.map((ind, idx) => (
-              <div key={idx} className="group relative bg-white rounded-[2.5rem] border border-slate-100 transition-all duration-700 flex flex-col overflow-hidden min-h-[620px] shadow-sm hover:shadow-[0_30px_60px_-15px_rgba(26,65,117,0.2)] hover:-translate-y-2">
+              <div key={idx} className="group relative bg-white rounded-[2.5rem] border border-slate-100 transition-all duration-700 flex flex-col overflow-hidden min-h-[620px] shadow-sm hover:shadow-[0_30px_60px_-15px_rgba(0,115,252,0.2)] hover:-translate-y-2">
                 
-                {/* Visual Glassmorphism Layer */}
                 <div className="absolute inset-0 z-0">
                   <img 
                     src={ind.image} 
                     alt={`${ind.name} context`} 
                     className="w-full h-full object-cover opacity-10 group-hover:opacity-40 group-hover:scale-105 transition-all duration-1000 ease-out"
                   />
-                  {/* Frosted Glass Overlay - Multi-layered for high quality depth */}
                   <div className="absolute inset-0 bg-white/90 backdrop-blur-[6px] group-hover:bg-white/70 transition-all duration-500"></div>
-                  {/* Subtle inner highlight for "glass edge" effect */}
                   <div className="absolute inset-0 border border-white/20 rounded-[2.5rem] pointer-events-none"></div>
-                  {/* Bottom Gradient for Content Contrast */}
                   <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
                 </div>
 
                 <div className="relative z-10 p-10 flex flex-col h-full">
                   <div className="flex items-center justify-between mb-10">
                     <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 flex items-center justify-center text-blue-400 shadow-2xl group-hover:from-blue-600 group-hover:to-blue-500 group-hover:text-white group-hover:scale-110 transition-all duration-500">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-blue to-slate-900 flex items-center justify-center text-brand-cyan shadow-2xl group-hover:from-brand-blue group-hover:to-brand-cyan group-hover:text-white group-hover:scale-110 transition-all duration-500">
                         <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           {ind.icon}
                         </svg>
                       </div>
                       <div>
-                        <div className="text-[10px] font-black tracking-[0.3em] text-blue-600 uppercase mb-0.5">{ind.tag}</div>
+                        <div className="text-[10px] font-black tracking-[0.3em] text-brand-blue uppercase mb-0.5">{ind.tag}</div>
                         <h3 className="text-2xl font-bold text-slate-900 leading-none font-display">{ind.name}</h3>
                       </div>
                     </div>
@@ -268,7 +264,7 @@ export const Salesforce: React.FC<SalesforceProps> = ({ onConsultClick }) => {
                     <ul className="space-y-4">
                       {ind.points.map((point, i) => (
                         <li key={i} className="flex items-start gap-4 text-sm text-slate-700 leading-relaxed group/item">
-                          <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 flex-shrink-0 group-hover/item:bg-blue-600 group-hover/item:scale-150 transition-all duration-300"></div>
+                          <div className="w-1.5 h-1.5 rounded-full bg-brand-cyan mt-2 flex-shrink-0 group-hover/item:bg-brand-blue group-hover/item:scale-150 transition-all duration-300"></div>
                           <span className="group-hover/item:text-slate-950 transition-colors font-medium">{point}</span>
                         </li>
                       ))}
@@ -278,7 +274,7 @@ export const Salesforce: React.FC<SalesforceProps> = ({ onConsultClick }) => {
                   <div className="mt-12 pt-8 border-t border-slate-200/50">
                     <button 
                       onClick={onConsultClick}
-                      className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.25em] text-slate-400 group-hover:text-blue-600 transition-all duration-300 w-full text-left"
+                      className="flex items-center gap-3 text-xs font-black uppercase tracking-[0.25em] text-slate-400 group-hover:text-brand-blue transition-all duration-300 w-full text-left"
                     >
                       <span>Activate Roadmap</span>
                       <svg className="w-5 h-5 translate-x-0 group-hover:translate-x-3 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -299,7 +295,7 @@ export const Salesforce: React.FC<SalesforceProps> = ({ onConsultClick }) => {
           <div className="grid lg:grid-cols-2 gap-24">
             <div>
               <h2 className="text-4xl font-bold mb-16 flex items-center gap-5 text-slate-900 font-display">
-                <span className="w-16 h-1.5 bg-blue-600 rounded-full inline-block"></span>
+                <span className="w-16 h-1.5 bg-brand-blue rounded-full inline-block"></span>
                 The Implementation Framework
               </h2>
               <div className="space-y-20">
@@ -321,8 +317,8 @@ export const Salesforce: React.FC<SalesforceProps> = ({ onConsultClick }) => {
                   }
                 ].map((pillar, idx) => (
                   <div key={idx} className="group relative">
-                    <div className="absolute -left-10 top-0 text-slate-100 font-black text-6xl -z-10 group-hover:text-blue-50 transition-colors">0{idx+1}</div>
-                    <h3 className="text-2xl font-bold mb-4 text-slate-900 group-hover:text-blue-600 transition-colors font-display">{pillar.title}</h3>
+                    <div className="absolute -left-10 top-0 text-slate-100 font-black text-6xl -z-10 group-hover:text-brand-cyan/20 transition-colors">0{idx+1}</div>
+                    <h3 className="text-2xl font-bold mb-4 text-slate-900 group-hover:text-brand-blue transition-colors font-display">{pillar.title}</h3>
                     <p className="text-slate-600 mb-6 leading-relaxed text-lg font-light">{pillar.desc}</p>
                     <div className="flex flex-wrap gap-2">
                       {pillar.details.map((detail, i) => (
@@ -338,7 +334,7 @@ export const Salesforce: React.FC<SalesforceProps> = ({ onConsultClick }) => {
 
             <div className="relative">
               <div className="sticky top-32 bg-slate-950 rounded-[3.5rem] p-16 text-white overflow-hidden shadow-2xl border border-white/5">
-                <div className="absolute -top-10 -right-10 p-12 opacity-5 text-blue-500">
+                <div className="absolute -top-10 -right-10 p-12 opacity-5 text-brand-blue">
                   <svg className="w-64 h-64" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                   </svg>
@@ -355,7 +351,7 @@ export const Salesforce: React.FC<SalesforceProps> = ({ onConsultClick }) => {
                     { title: "Trust Layer Mastery", desc: "Leverage Einstein without compromising sensitive data." }
                   ].map((item, i) => (
                     <div key={i} className="flex gap-8 group">
-                      <div className="flex-shrink-0 w-14 h-14 bg-blue-600/10 rounded-2xl border border-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                      <div className="flex-shrink-0 w-14 h-14 bg-brand-blue/10 rounded-2xl border border-brand-blue/20 flex items-center justify-center text-brand-cyan group-hover:scale-110 group-hover:bg-brand-blue group-hover:text-white transition-all duration-300">
                         <span className="font-bold text-sm">0{i+1}</span>
                       </div>
                       <div>
@@ -368,7 +364,7 @@ export const Salesforce: React.FC<SalesforceProps> = ({ onConsultClick }) => {
                 
                 <button 
                   onClick={onConsultClick}
-                  className="w-full mt-16 bg-blue-600 py-6 rounded-2xl font-bold hover:bg-blue-500 transition-all shadow-xl shadow-blue-900/40 text-lg active:scale-95 flex items-center justify-center gap-3"
+                  className="w-full mt-16 bg-brand-blue py-6 rounded-2xl font-bold hover:bg-brand-blue/90 transition-all shadow-xl shadow-brand-blue/40 text-lg active:scale-95 flex items-center justify-center gap-3"
                 >
                   Architecture Audit
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
@@ -383,7 +379,7 @@ export const Salesforce: React.FC<SalesforceProps> = ({ onConsultClick }) => {
       <section className="py-40 px-6 bg-white relative overflow-hidden">
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-5xl md:text-6xl font-bold mb-10 text-slate-900 tracking-tight leading-tight font-display">
-            Activate your <span className="text-blue-600 underline decoration-blue-100 underline-offset-8">Autonomous</span> workforce.
+            Activate your <span className="text-brand-blue underline decoration-brand-cyan/30 underline-offset-8">Autonomous</span> workforce.
           </h2>
           <p className="text-xl text-slate-500 mb-16 font-light max-w-2xl mx-auto leading-relaxed">
             Join the organizations leading their sectors with specialized Salesforce intelligence. 
@@ -399,7 +395,7 @@ export const Salesforce: React.FC<SalesforceProps> = ({ onConsultClick }) => {
             </button>
             <div className="flex flex-col items-start sm:items-center">
               <div className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">Certified Specialist</div>
-              <div className="text-[10px] font-black text-blue-600 uppercase tracking-[0.3em]">Salesforce Partner</div>
+              <div className="text-[10px] font-black text-brand-blue uppercase tracking-[0.3em]">Salesforce Partner</div>
             </div>
           </div>
         </div>
